@@ -1,0 +1,31 @@
+
+     <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#/dashboard">Bucket List</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a class="navbar-brand" href="#/dashboard">Home</a></li>
+        <li><a class="navbar" href="#/logout">Logout</a></li>
+    </ul>
+    </div>
+</div>
+</nav>
+<div ng-controller='showController'>
+    <h4>Bucket List</h4>
+        <div class="done col-8-md">
+            <h5>Done</h5>
+                <div ng-repeat="dash in done ">
+                    <div>
+                            {{ dash.name_id.name }} says {{ dash.title }}: {{ dash.desc }} -{{dash.created_at| date :'medium'}}
+                    </div>
+                </div>
+        </div>
+        <div class="pending col-8-md">
+            <h5>Pending</h5>
+                <div ng-repeat="dash in pend ">
+                    <div>
+                        {{ dash.name_id.name }} says {{ dash.title }}: {{ dash.desc }} -{{dash.created_at | date :'medium'}} </div>
+                </div>
+            </div>
+</div>

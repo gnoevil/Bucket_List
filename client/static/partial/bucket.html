@@ -1,0 +1,10 @@
+<div ng-controller='BucketController'>
+ <h3>Bucket Lists!</h3>
+    <form class="form-horizontal">
+        <div class="form-group col-md-10">
+            <label for="name">Name:</label>
+        	<input type="text" class="form-control" ng-model="name">
+        </div>
+ 		<button ng-click='addBucket()' class="btn btn-default" type='submit' value='Enter'>Submit</button>
+    </form>
+</div>

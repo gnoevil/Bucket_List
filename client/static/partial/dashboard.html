@@ -1,0 +1,37 @@
+<nav class="navbar navbar-default">
+<div class="container-fluid">
+<div class="navbar-header">
+   <a class="navbar-brand" href="#/dashboard">Bucket List</a>
+</div>
+<ul class="nav navbar-nav">
+   <li><a class="navbar-brand" href="#/dashboard">Home</a></li>
+   <li><a class="navbar" href="#/logout">Logout</a></li>
+</ul>
+</div>
+</div>
+</nav>
+ <div ng-controller='dashController'>
+    <h4>Welcome, {{myname}}!</h4>
+<div class="form-group">
+    <label for="title">Title:</label>
+    <input ng-model ="newdash.title" type="text">
+    <label for="description">Description:</label>
+    <input ng-model ="newdash.description" type="text">
+    <label for="user">User:</label>
+        <select ng-model ="newdash.name">
+            <option ng-repeat="user in users" value="{{user._id}}">
+            {{user.name}}
+            </option>
+        </select>
+        <button class="btn btn-primary"  ng-click='addList()' type='submit' >Add to List</button>
+    </div>
+         <h4>Before I die I want to:</h4>
+    <div ng-repeat="dash in dashs ">
+        <div><input ng-click="setdone(checkstatus,dash)" ng-model="checkstatus" type="checkbox" ng-checked="{{dash.done}}">
+    {{ dash.name_id.name }} says {{ dash.title }}: {{ dash.desc }} -{{dash.created_at("<mm-dd-YYYY>")}} </div>
+        </div>
+        <h4>List of other users (Click to view profile):</h4>
+        <ul ng-repeat="user in users ">
+            <li><a ng-bind="user.name" ng-href="#/user/{{user._id}}">{{ user.name }}</a>  </li>
+        </ul>
+    </div>
